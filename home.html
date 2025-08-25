@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo</title>
+    <!-- daisyui cdn -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="bg-[#f4f5f7] h-[100vh]">
+    <div class="bg-white rounded-b-3xl max-w-lg mx-auto">
+    <!-- nav section -->
+    <section class="border-b-1 border-gray-400 min-h-[84px] max-w-lg mx-auto mb-8 px-6 py-2.5 flex justify-between items-center">
+        <div class="flex gap-2">
+            <img src="assets/Group.png" class="h-12" alt="">
+            <div class="">
+                <h2 class="font-bold">$<span id="available-balance">45000</span></h2>
+                <p class="text-[rgba(8,8,8,0.5)]">Available balance</p>
+            </div>
+        </div>
+        <div>
+            <button class="btn text-[rgba(8,8,8,0.5)]"><i class="text-[#666768] fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log Out</button>
+        </div>
+    </section>
+
+    <!-- welcome section -->
+    <section class="max-w-lg mx-auto mb-6 px-6">
+       <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
+       <p class="text-[rgba(8,8,8,0.5)] font-normal text-[16px]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+    </section>
+
+    <!-- feature section -->
+    <section class="grid grid-cols-3 max-w-lg mx-auto px-6 gap-4 pb-6">
+      <div id="add-money-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/wallet1.png"  class="mx-auto mb-2" alt="">
+          <h1>Add money</h1>
+      </div>
+      <div id="cash-out-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/send1.png"  class="mx-auto mb-2" alt="">
+          <h1>Cashout</h1>
+      </div>
+      <div id="transfer-money-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/money1.png"  class="mx-auto mb-2" alt="">
+          <h1>Transfer Money</h1>
+      </div>
+      <div id="get-bonus-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/bonus1.png"  class="mx-auto mb-2" alt="">
+          <h1>Get Bonus</h1>
+      </div>
+      <div id="pay-bill-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/purse1.png"  class="mx-auto mb-2" alt="">
+          <h1>Pay Bill</h1>
+      </div>
+      <div id="transaction-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+          <img src="assets/transaction1.png"  class="mx-auto mb-2" alt="">
+          <h1>Transaction</h1>
+      </div>
+    </section>
+    </div>
+
+    <div class="all-form-section max-w-lg mx-auto">
+        <!-- add money -->
+        <div id="add-money-parent">
+            <h1 class="mt-6 text-[18px] font-semibold">Add Money</h1>
+            <form action="" class="bg-white rounded-3xl p-6">
+                <div class="mb-4">
+                    <label>Select a bank</label>
+                    <select id="bank" class="select w-full mt-3 bg-[#f4f5f7] rounded-3xl">
+                        <option disabled selected>Select bank</option>
+                        <option>AB bank</option>
+                        <option>DBBL</option>
+                        <option>IFIC bank</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label>Bank Account Number</label>
+                    <input id="account-number" type="text" placeholder="Enter 11 digit account number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Amount to Add</label>
+                    <input id="add-amount" type="text" placeholder="Add amount to withdraw" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Pin Number</label>
+                    <input id="add-pin" type="text" placeholder="Enter 4 digit pin number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <button id="add-money-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white py-[14px] text-[20px] font-semibold">Add Money</button>
+            </form>
+        </div>
+
+        <!-- cash out -->
+        <div id="cash-out-parent">
+            <h1 class="mt-6 text-[18px] font-semibold">Cash Out</h1>
+            <form action="" class="bg-white rounded-3xl p-6">
+                <div class="mb-4">
+                    <label>Agent Number</label>
+                    <input id="agent-number" type="text" placeholder="Enter 11 digit number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Amount</label>
+                    <input id="cash-out-amount" type="text" placeholder="Enter amount to withdraw" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Pin Number</label>
+                    <input id="cash-out-pin" type="text" placeholder="Enter 4 digit pin number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <button id="cash-out-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white py-[14px] text-[20px] font-semibold">Withdraw Money</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- js script -->
+     <script src="./home.js"></script>
+</body>
+</html>
