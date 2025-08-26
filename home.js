@@ -1,15 +1,64 @@
+// function to get input values
+function getInputValueNumber(id) {
+    const inputFieldValueNumber = parseInt(document.getElementById(id).value)
+     return inputFieldValueNumber
+}
+function getInputValue(id) {
+    const inputFieldValue = document.getElementById(id).value
+     return inputFieldValue
+}
+
+// function to get inner text
+function getInnerTextNumber(id) {
+    const InnerTextNumber = parseInt(document.getElementById(id).innerText)
+     return InnerTextNumber
+}
+
+// function to set available balance
+function setAvailableBalance(value) {
+    document.getElementById("available-balance").innerText = value
+}
+
+// function to add toggle feature
+
+function toggleFeature(id) {
+
+    const forms = document.getElementsByClassName("form")
+    for (const form of forms) {
+        form.style.display = "none"
+    }
+
+    document.getElementById(id).style.display = "block"
+}
+// function to toggle button style
+
+function toggleButtonStyle(id) {
+    
+    const formBtn = document.getElementsByClassName("form-btn")
+    for (const btn of formBtn) {
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
+        btn.classList.add("border-[#0808081a]","bg-[#ffffff]")
+        
+    }
+    document.getElementById(id).classList.remove("border-[#0808081a]","bg-[#ffffff]")
+    document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
+}
+
+
+
+
 // add money
 
 document.getElementById("add-money-btn").addEventListener("click", function (e) {
     e.preventDefault()
-    const bank = document.getElementById("bank").value
-    const accountNumber = document.getElementById("account-number").value
-    const amount = parseInt(document.getElementById("add-amount").value)
+    const bank = getInputValue("bank")
+    const accountNumber = getInputValue("account-number")
+    const amount = getInputValueNumber("add-amount")
     
     const validPin = 1234
-    const pin = parseInt(document.getElementById("add-pin").value)
+    const pin = getInputValueNumber("add-pin")
 
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText)
+    const availableBalance = getInnerTextNumber("available-balance")
 
     if (accountNumber.length < 11) {
         alert("Please provide valid account number")
@@ -22,22 +71,21 @@ document.getElementById("add-money-btn").addEventListener("click", function (e) 
 
     const newAvailableBalance = amount + availableBalance
 
-    document.getElementById("available-balance").innerText = newAvailableBalance
+    setAvailableBalance(newAvailableBalance)
 })
-
 
 
 // cash out
 
 document.getElementById("cash-out-btn").addEventListener("click", function (e) {
     e.preventDefault()
-    const agentNumber = document.getElementById("agent-number").value
-    const CashOutAmount = parseInt(document.getElementById("cash-out-amount").value)
+    const agentNumber = getInputValue("agent-number")
+    const CashOutAmount = getInputValueNumber("cash-out-amount")
     
     const validCashOutPin = 1234
-    const cashOutPin = parseInt(document.getElementById("cash-out-pin").value)
+    const cashOutPin = getInputValueNumber("cash-out-pin")
 
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText)
+    const availableBalance = getInnerTextNumber("available-balance")
 
     if (agentNumber.length < 11) {
         alert("Please provide valid account number")
@@ -50,7 +98,34 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
 
     const newAvailableBalance = availableBalance - CashOutAmount
 
-    document.getElementById("available-balance").innerText = newAvailableBalance
+    setAvailableBalance(newAvailableBalance)
+})
+
+
+// transfer money
+
+document.getElementById("transfer-money-btn").addEventListener("click", function (e) {
+    e.preventDefault()
+    const userAccountNumber = getInputValue("user-account-number")
+    const transferMoneyAmount = getInputValueNumber("transfer-money-amount")
+    
+    const validPin = 1234
+    const Pin = getInputValueNumber("pin")
+
+    const availableBalance = getInnerTextNumber("available-balance")
+
+    if (userAccountNumber.length < 11) {
+        alert("Please provide valid account number")
+        return
+    }
+    else if (Pin !== validPin) {
+        alert("Please provide valid pin number")
+        return
+    }
+
+    const newAvailableBalance = availableBalance - transferMoneyAmount
+
+    setAvailableBalance(newAvailableBalance)
 })
 
 
@@ -58,12 +133,14 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
 // toggling feature
 
 document.getElementById("add-money-card").addEventListener("click", function (e) {
-    document.getElementById("cash-out-parent").style.display = "none"
-
-    document.getElementById("add-money-parent").style.display = "block"
+    toggleFeature("add-money-parent")
+    toggleButtonStyle("add-money-card")
 })
 document.getElementById("cash-out-card").addEventListener("click", function (e) {
-    document.getElementById("add-money-parent").style.display = "none"
-
-    document.getElementById("cash-out-parent").style.display = "block"
+    toggleFeature("cash-out-parent")
+    toggleButtonStyle("cash-out-card")
+})
+document.getElementById("transfer-money-card").addEventListener("click", function (e) {
+    toggleFeature("transfer-money-parent")
+    toggleButtonStyle("transfer-money-card")
 })

@@ -38,27 +38,27 @@
 
     <!-- feature section -->
     <section class="grid grid-cols-3 max-w-lg mx-auto px-6 gap-4 pb-6">
-      <div id="add-money-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="add-money-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/wallet1.png"  class="mx-auto mb-2" alt="">
           <h1>Add money</h1>
       </div>
-      <div id="cash-out-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="cash-out-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/send1.png"  class="mx-auto mb-2" alt="">
           <h1>Cashout</h1>
       </div>
-      <div id="transfer-money-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="transfer-money-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/money1.png"  class="mx-auto mb-2" alt="">
           <h1>Transfer Money</h1>
       </div>
-      <div id="get-bonus-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="get-bonus-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/bonus1.png"  class="mx-auto mb-2" alt="">
           <h1>Get Bonus</h1>
       </div>
-      <div id="pay-bill-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="pay-bill-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/purse1.png"  class="mx-auto mb-2" alt="">
           <h1>Pay Bill</h1>
       </div>
-      <div id="transaction-card" class="text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a]">
+      <div id="transaction-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
           <img src="assets/transaction1.png"  class="mx-auto mb-2" alt="">
           <h1>Transaction</h1>
       </div>
@@ -67,7 +67,7 @@
 
     <div class="all-form-section max-w-lg mx-auto">
         <!-- add money -->
-        <div id="add-money-parent">
+        <div id="add-money-parent" class="form">
             <h1 class="mt-6 text-[18px] font-semibold">Add Money</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
@@ -96,7 +96,7 @@
         </div>
 
         <!-- cash out -->
-        <div id="cash-out-parent">
+        <div id="cash-out-parent" class="form">
             <h1 class="mt-6 text-[18px] font-semibold">Cash Out</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
@@ -112,6 +112,26 @@
                     <input id="cash-out-pin" type="text" placeholder="Enter 4 digit pin number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
                 </div>
                 <button id="cash-out-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white py-[14px] text-[20px] font-semibold">Withdraw Money</button>
+            </form>
+        </div>
+
+        <!-- transfer money -->
+        <div id="transfer-money-parent" class="form">
+            <h1 class="mt-6 text-[18px] font-semibold">Transfer Money</h1>
+            <form action="" class="bg-white rounded-3xl p-6">
+                <div class="mb-4">
+                    <label>User Account Number</label>
+                    <input id="user-account-number" type="text" placeholder="Enter 11 digit number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Amount</label>
+                    <input id="transfer-money-amount" type="text" placeholder="Enter amount to transfer" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <div class="mb-4">
+                    <label>Pin Number</label>
+                    <input id="pin" type="text" placeholder="Enter 4 digit pin number" class="input w-full mt-3 bg-[#f4f5f7] rounded-3xl" />
+                </div>
+                <button id="transfer-money-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white py-[14px] text-[20px] font-semibold">Send Now</button>
             </form>
         </div>
     </div>
