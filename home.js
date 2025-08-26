@@ -129,6 +129,29 @@ document.getElementById("transfer-money-btn").addEventListener("click", function
 })
 
 
+// get bonus
+
+document.getElementById("get-bonus-btn").addEventListener("click", function (e) {
+    e.preventDefault()
+    const bonusCoupon = getInputValue("bonus-coupon")
+
+    const availableBalance = getInnerTextNumber("available-balance")
+    let bonus = 0
+
+    if (bonusCoupon == 1000) {
+        bonus += 1000
+    }
+    else {
+        alert("Please provide valid coupon")
+        return
+    }
+
+    const newAvailableBalance = availableBalance + bonus
+
+    setAvailableBalance(newAvailableBalance)
+})
+
+
 
 // toggling feature
 
@@ -143,4 +166,8 @@ document.getElementById("cash-out-card").addEventListener("click", function (e) 
 document.getElementById("transfer-money-card").addEventListener("click", function (e) {
     toggleFeature("transfer-money-parent")
     toggleButtonStyle("transfer-money-card")
+})
+document.getElementById("get-bonus-card").addEventListener("click", function (e) {
+    toggleFeature("get-bonus-parent")
+    toggleButtonStyle("get-bonus-card")
 })
