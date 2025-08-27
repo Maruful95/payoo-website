@@ -152,6 +152,34 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (e) 
 })
 
 
+// pay bill
+
+document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
+    e.preventDefault()
+    const bank = getInputValue("pay-bank")
+    const billerAccountNumber = getInputValue("biller-account-number")
+    const amount = getInputValueNumber("amount-to-pay")
+    
+    const validPin = 1234
+    const pin = getInputValueNumber("pay-pin")
+
+    const availableBalance = getInnerTextNumber("available-balance")
+
+    if (billerAccountNumber.length < 11) {
+        alert("Please provide valid account number")
+        return
+    }
+    else if (pin !== validPin) {
+        alert("Please provide valid pin number")
+        return
+    }
+
+    const newAvailableBalance = availableBalance - amount
+
+    setAvailableBalance(newAvailableBalance)
+})
+
+
 
 // toggling feature
 
@@ -170,4 +198,8 @@ document.getElementById("transfer-money-card").addEventListener("click", functio
 document.getElementById("get-bonus-card").addEventListener("click", function (e) {
     toggleFeature("get-bonus-parent")
     toggleButtonStyle("get-bonus-card")
+})
+document.getElementById("pay-bill-card").addEventListener("click", function (e) {
+    toggleFeature("pay-bill-parent")
+    toggleButtonStyle("pay-bill-card")
 })
