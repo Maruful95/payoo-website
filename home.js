@@ -1,3 +1,6 @@
+
+const transactionData = []
+
 // function to get input values
 function getInputValueNumber(id) {
     const inputFieldValueNumber = parseInt(document.getElementById(id).value)
@@ -36,12 +39,12 @@ function toggleButtonStyle(id) {
     
     const formBtn = document.getElementsByClassName("form-btn")
     for (const btn of formBtn) {
-        btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
-        btn.classList.add("border-[#0808081a]","bg-[#ffffff]")
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]","text-[#0874F2]", "font-semibold")
+        btn.classList.add("border-[#0808081a]","bg-[#ffffff]","text-[#080808b3]","font-normal")
         
     }
-    document.getElementById(id).classList.remove("border-[#0808081a]","bg-[#ffffff]")
-    document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
+    document.getElementById(id).classList.remove("border-[#0808081a]","bg-[#ffffff]","text-[#080808b3]","font-normal")
+    document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]","text-[#0874F2]", "font-semibold")
 }
 
 
@@ -72,6 +75,13 @@ document.getElementById("add-money-btn").addEventListener("click", function (e) 
     const newAvailableBalance = amount + availableBalance
 
     setAvailableBalance(newAvailableBalance)
+
+    // update transaction data
+    const data = {
+        name:"Add money",
+        date:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 
@@ -99,6 +109,13 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
     const newAvailableBalance = availableBalance - CashOutAmount
 
     setAvailableBalance(newAvailableBalance)
+
+    // update transaction data
+    const data = {
+        name:"Cash Out",
+        date:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 
@@ -126,6 +143,13 @@ document.getElementById("transfer-money-btn").addEventListener("click", function
     const newAvailableBalance = availableBalance - transferMoneyAmount
 
     setAvailableBalance(newAvailableBalance)
+
+    // update transaction data
+    const data = {
+        name:"Transfer money",
+        date:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 
@@ -149,6 +173,13 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (e) 
     const newAvailableBalance = availableBalance + bonus
 
     setAvailableBalance(newAvailableBalance)
+
+    // update transaction data
+    const data = {
+        name:"Get bonus",
+        date:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
 })
 
 
@@ -177,6 +208,41 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
     const newAvailableBalance = availableBalance - amount
 
     setAvailableBalance(newAvailableBalance)
+
+    // update transaction data
+    const data = {
+        name:"Pay bill",
+        date:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
+})
+
+
+// transactions
+
+document.getElementById("transaction-card").addEventListener("click", function (e) {
+    const transactions = document.getElementById("transactions")
+    transactions.innerHTML = ""
+
+    for (const data of transactionData) {
+        const div = document.createElement("div")
+        div.innerHTML = `
+        <div class="mt-3 px-3 py-4 bg-white flex justify-between items-center rounded-2xl border-2 border-[#0808080d]">
+                <div class="flex items-center gap-2">
+                    <div class="p-3 rounded-full bg-[#0808080d]">
+                        <img src="assets/wallet1.png" alt="">
+                    </div>
+                    <div>
+                        <h1 class="text-[16px] text-[#080808b3] font-semibold">${data.name}</h1>
+                        <p class="text-[12px] text-[#080808b3] font-normal">${data.date}</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-ellipsis-vertical text-2xl text-[#080808b3]"></i>
+            </div>
+        `
+
+        transactions.appendChild(div)
+    }
 })
 
 
@@ -202,4 +268,8 @@ document.getElementById("get-bonus-card").addEventListener("click", function (e)
 document.getElementById("pay-bill-card").addEventListener("click", function (e) {
     toggleFeature("pay-bill-parent")
     toggleButtonStyle("pay-bill-card")
+})
+document.getElementById("transaction-card").addEventListener("click", function (e) {
+    toggleFeature("transaction-parent")
+    toggleButtonStyle("transaction-card")
 })

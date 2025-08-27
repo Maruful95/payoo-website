@@ -38,27 +38,27 @@
 
     <!-- feature section -->
     <section class="grid grid-cols-3 max-w-lg mx-auto px-6 gap-4 pb-6">
-      <div id="add-money-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="add-money-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/wallet1.png"  class="mx-auto mb-2" alt="">
           <h1>Add money</h1>
       </div>
-      <div id="cash-out-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="cash-out-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/send1.png"  class="mx-auto mb-2" alt="">
           <h1>Cashout</h1>
       </div>
-      <div id="transfer-money-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="transfer-money-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/money1.png"  class="mx-auto mb-2" alt="">
           <h1>Transfer Money</h1>
       </div>
-      <div id="get-bonus-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="get-bonus-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/bonus1.png"  class="mx-auto mb-2" alt="">
           <h1>Get Bonus</h1>
       </div>
-      <div id="pay-bill-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="pay-bill-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/purse1.png"  class="mx-auto mb-2" alt="">
           <h1>Pay Bill</h1>
       </div>
-      <div id="transaction-card" class="form-btn text-center px-2.5 py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff]">
+      <div id="transaction-card" class="form-btn text-center py-5 rounded-[12px] border-1 border-[#0808081a] bg-[#ffffff] text-[#080808b3] text-sm font-normal">
           <img src="assets/transaction1.png"  class="mx-auto mb-2" alt="">
           <h1>Transaction</h1>
       </div>
@@ -68,7 +68,7 @@
     <div class="all-form-section max-w-lg mx-auto">
         <!-- add money -->
         <div id="add-money-parent" class="form">
-            <h1 class="mt-6 text-[18px] font-semibold">Add Money</h1>
+            <h1 class="mt-6 mb-4 text-[18px] font-semibold">Add Money</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
                     <label>Select a bank</label>
@@ -97,7 +97,7 @@
 
         <!-- cash out -->
         <div id="cash-out-parent" class="form">
-            <h1 class="mt-6 text-[18px] font-semibold">Cash Out</h1>
+            <h1 class="mt-6 mb-4 text-[18px] font-semibold">Cash Out</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
                     <label>Agent Number</label>
@@ -117,7 +117,7 @@
 
         <!-- transfer money -->
         <div id="transfer-money-parent" class="form">
-            <h1 class="mt-6 text-[18px] font-semibold">Transfer Money</h1>
+            <h1 class="mt-6 mb-4 text-[18px] font-semibold">Transfer Money</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
                     <label>User Account Number</label>
@@ -137,7 +137,7 @@
 
         <!-- get bonus -->
         <div id="get-bonus-parent" class="form">
-            <h1 class="mt-6 text-[18px] font-semibold">Get Bonus</h1>
+            <h1 class="mt-6 mb-4 text-[18px] font-semibold">Get Bonus</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
                     <label>Enter Bonus Coupon</label>
@@ -149,7 +149,7 @@
 
         <!-- pay bill -->
         <div id="pay-bill-parent" class="form">
-            <h1 class="mt-6 text-[18px] font-semibold">Pay Bill</h1>
+            <h1 class="mt-6 mb-4 text-[18px] font-semibold">Pay Bill</h1>
             <form action="" class="bg-white rounded-3xl p-6">
                 <div class="mb-4">
                     <label>Select to pay</label>
@@ -174,6 +174,17 @@
                 </div>
                 <button id="pay-bill-btn" class="btn bg-[#0874F2] w-full rounded-3xl text-white py-[14px] text-[20px] font-semibold">Pay Now</button>
             </form>
+        </div>
+
+        <!-- transactions -->
+        <div id="transaction-parent" class="form mt-6">
+            <div class="flex justify-between items-center ">
+                <h1 class="mb-4 text-[18px] font-semibold">Transaction History</h1>
+                <p class="text-sm font-normal text-[#08080880]">View All</p>
+            </div>
+            <div id="transactions">
+                
+            </div>
         </div>
 
     </div>
